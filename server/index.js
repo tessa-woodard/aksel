@@ -20,9 +20,9 @@ app.use(session({
     }
 }))
 
-// app.post("/auth/register", ctrl.register)
-// app.post("/auth/login", ctrl.login)
-// app.post("/auth/logout", ctrl.logout)
+app.post("/register", authCtrl.register)
+app.post("/login", authCtrl.login)
+app.post("/logout", authCtrl.logout)
 
 massive({
     connectionString:

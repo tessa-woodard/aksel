@@ -4,10 +4,10 @@ DROP TABLE IF EXISTS schedule;
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
-    email VARCHAR(20),
-    password VARCHAR(20),
-    first_name VARCHAR(20),
-    last_name VARCHAR(20),
+    email VARCHAR(300),
+    password text,
+    first_name text,
+    last_name text,
     profile_picture text
 );
 

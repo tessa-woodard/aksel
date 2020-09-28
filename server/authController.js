@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt')
 module.exports = {
     register: async (req, res) => {
         const db = req.app.get("db")
-        const { email, password } = req.body
+        const { email, password, first_name, last_name } = req.body
 
         const [user] = await db.check_user([email])
 
@@ -14,9 +14,9 @@ module.exports = {
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(password, salt)
 
-        const profile_picture = `https://robohash.org/${username}`
+        const profile_picture = `https://robohash.org/${first_name}`
 
-        const [newUser] = await db.register_user([email, hash, first_name, last_name, profile_picture])
+        const [newUser] = await db.register_user([first_name, last_name, email, hash, profile_picture])
 
         req.session.user = newUser
 
@@ -42,7 +42,7 @@ module.exports = {
             return res.status(404).send("Oops! Couldn't find your account. Please try again or create an account.")
         }
 
-        const isAuthenticated = bcrypt.compareSync(password, existingUser.hash)
+        const isAuthenticated = bcrypt.compareSync(password, existingUser.password)
 
         if (!isAuthenticated) {
             return res.status(403).send("Incorrect email or password. Please try again.")
@@ -50,7 +50,13 @@ module.exports = {
 
         delete existingUser.hash
 
-        req.session.user = existingUser
+        req.session.user = {
+            id: existingUser.id,
+            email: existingUser.email,
+            first_name: existingUser.first_name,
+            last_name: existingUser.last_name,
+            profile_picture: existingUser.profile_picture
+        }
 
         res.status(200).send(req.session.user)
     },

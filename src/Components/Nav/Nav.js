@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { logoutUser } from '../../ducks/authReducer'
 
 function Nav(props) {
-    if (props.location.pathname !== '/') {
+    if (props.location.pathname !== '/login' & '/register') {
         console.log('nav', props)
         return (
             <div className='Nav'>
