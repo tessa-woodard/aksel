@@ -5,16 +5,19 @@ DROP TABLE IF EXISTS schedule;
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     email VARCHAR(300),
-    password text,
-    first_name text,
-    last_name text,
-    profile_picture text
+    password TEXT,
+    first_name TEXT,
+    last_name TEXT,
+    profile_picture TEXT
 );
 
 CREATE TABLE posts (
     id SERIAL PRIMARY KEY,
-    content TEXT,
-    post_id INT
+    users_id INT REFERENCES users(id),
+    content VARCHAR(500),
+    comment VARCHAR(500),
+    created_at DATE,
+    author_id INT REFERENCES users(id)
 );
 
 CREATE TABLE schedule (

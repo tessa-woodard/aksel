@@ -64,9 +64,9 @@ class Login extends Component {
                     <div className='login_button_container'>
                         <button className='dark_button' onClick={() => { this.handleLogin() }}> Login </button>
 
-                        <span> I don't have an account. </span>
+                        <span> Don't have an account? </span>
 
-                        <button className='black_button' onClick={() => { this.props.history.push('/register') }} > Sign Up! </button>
+                        <button className='dark_button' onClick={() => { this.props.history.push('/register') }} > Sign Up! </button>
                     </div>
                 </div>
             </div >

@@ -50,7 +50,7 @@ class Register extends Component {
                             type="firstname"
                             maxLength="20"
                             placeholder="Enter First Name"
-                            name="firstname"
+                            name="first_name"
                             onChange={(e) => {
                                 this.handleInput(e)
                             }}
@@ -60,7 +60,7 @@ class Register extends Component {
                             type="lastname"
                             maxLength="20"
                             placeholder="Enter Last Name"
-                            name="lastname"
+                            name="last_name"
                             onChange={(e) => {
                                 this.handleInput(e)
                             }}

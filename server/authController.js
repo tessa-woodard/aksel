@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt')
 module.exports = {
     register: async (req, res) => {
         const db = req.app.get("db")
-        const { email, password, first_name, last_name } = req.body
+        const { first_name, last_name, email, password } = req.body
 
         const [user] = await db.check_user([email])
 
@@ -50,13 +50,7 @@ module.exports = {
 
         delete existingUser.hash
 
-        req.session.user = {
-            id: existingUser.id,
-            email: existingUser.email,
-            first_name: existingUser.first_name,
-            last_name: existingUser.last_name,
-            profile_picture: existingUser.profile_picture
-        }
+        req.session.user = existingUser
 
         res.status(200).send(req.session.user)
     },
