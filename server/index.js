@@ -39,7 +39,7 @@ app.delete('/posts/:post_id', verifyUser, postCtrl.deletePost)
 app.get('/comments', verifyUser, commentCtrl.getComments)
 app.post('/comments', verifyUser, commentCtrl.addComment)
 app.put('/comments/:comment_id', verifyUser, commentCtrl.editComment)
-app.delete('/comment/:comment_id', verifyUser, commentCtrl.deleteComment)
+app.delete('/comments/:comment_id', verifyUser, commentCtrl.deleteComment)
 
 massive({
     connectionString:

@@ -1,2 +1,2 @@
-DELETE FROM posts
+DELETE FROM comments
 WHERE id = $1;

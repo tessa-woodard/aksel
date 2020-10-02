@@ -10,7 +10,6 @@ class Dashboard extends Component {
         super(props);
         this.state = {
             posts: [],
-            search: '',
             userInput: '',
         }
     }
@@ -22,33 +21,26 @@ class Dashboard extends Component {
             })
         }
         this.getPosts()
-
     }
 
     handleChange = (e) => {
         this.setState({
-            search: e.target.value,
             userInput: e.target.value,
         })
     }
 
     getPosts = () => {
-        let { search, posts } = this.state
-        let url = "/posts"
-
-        if (posts && !search) {
-            url += "?user_posts=true&search="
-        } else if (!posts && search) {
-            url += `?user_posts=false&search=${search}`
-        } else if (posts && search) {
-            url += `?user_posts=true&search=${search}`
-        } else if (!posts && !search) {
-            url += "?user_posts=false&search="
-        }
-        axios.get(url).then((res) => {
+        axios.get('/posts').then((res) => {
             this.setState({
                 posts: res.data,
-                userInput: this.props.content,
+            })
+        })
+    }
+
+    getComments = () => {
+        axios.get('/comments').then((res) => {
+            this.setState({
+                comments: res.data,
             })
         })
     }
@@ -63,13 +55,9 @@ class Dashboard extends Component {
         })
     }
 
-    reset() {
-        let url = "/posts/"
-        if (this.state.posts) {
-            url += "?user_posts=true&search="
-        }
-        axios.get(url).then((res) => {
-            this.setState({ posts: res.data, search: "" })
+    handleCommentClick = (post_id, content) => {
+        axios.post('/comments', { content, post_id }).then((res) => {
+            this.getPosts()
         })
     }
 
@@ -91,6 +79,7 @@ class Dashboard extends Component {
 
     render() {
         const mapPosts = this.state.posts.map((post, index) => {
+
             return (
 
                 <li className="post-container" key={post.id}>
@@ -100,7 +89,6 @@ class Dashboard extends Component {
                     </div>
 
                     <div className='content_box dash_post_box'>
-                        <h3>{this.title}</h3>
                         <div className='author_box'>
                             <p>by {post.first_name} </p>
                             <img alt='author' />
@@ -110,26 +98,22 @@ class Dashboard extends Component {
                     <Post
                         post={post}
                         key={post.id}
+                        getPosts={this.getPosts}
                         handleEdit={this.handleEdit}
                         handleDelete={this.handleDelete}
+                        handleCommentClick={this.handleCommentClick}
+                        handleCommentEdit={this.props.handleCommentEdit}
+                        handleCommentDelete={this.handleCommentDelete}
                     />
 
                 </li>
+
             )
+
         })
 
         return (
             <div className="input-container">
-
-                <div className='dash_search_box'>
-
-                    <input onChange={(e) => this.handleChange(e)} className='dash_search_bar' placeholder='Search by Title' />
-
-                    {/* <img onClick={this.getPosts} className='dash_search_button' src={searchLogo} alt='search' /> */}
-
-                    <button onClick={this.reset} className='dark_button' id='dash_reset'>Reset</button>
-
-                </div>
 
                 <textarea
                     id="new-post"
@@ -149,10 +133,14 @@ class Dashboard extends Component {
                 >
                     Submit
                 </button>
+
                 <div>
                     <section className="post-box">{mapPosts}</section>
                 </div>
+
             </div>
+
+
 
         )
     }

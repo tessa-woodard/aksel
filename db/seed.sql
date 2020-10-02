@@ -1,6 +1,7 @@
+DROP TABLE IF EXISTS comments;
 DROP TABLE IF EXISTS posts;
-DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS schedule;
+DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
@@ -15,9 +16,15 @@ CREATE TABLE posts (
     id SERIAL PRIMARY KEY,
     users_id INT REFERENCES users(id),
     content VARCHAR(500),
-    comment VARCHAR(500),
-    created_at DATE,
-    author_id INT REFERENCES users(id)
+    created_at DATE
+);
+
+CREATE TABLE comments (
+    id SERIAL PRIMARY KEY,
+    users_id INT REFERENCES users(id),
+    post_id INT REFERENCES posts(id),
+    content VARCHAR(500),
+    created_at DATE
 );
 
 CREATE TABLE schedule (

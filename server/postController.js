@@ -1,6 +1,10 @@
 const getAllPosts = async (db) => {
     const posts = await db.get_posts()
-    return posts
+    const postsWithComments = await Promise.all(posts.map(async post => {
+        const comments = await db.get_comments_by_post_id([post.id])
+        return { ...post, comments }
+    }))
+    return postsWithComments
 }
 
 module.exports = {

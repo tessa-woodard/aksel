@@ -1,3 +1,3 @@
-INSERT INTO posts (users_id, content, created_at)
-VALUES ($1, $2, NOW())
+INSERT INTO "comments" (users_id, post_id, content, created_at)
+VALUES ($1, $2, $3, NOW())
 returning *;
