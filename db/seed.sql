@@ -9,7 +9,8 @@ CREATE TABLE users (
     password TEXT,
     first_name TEXT,
     last_name TEXT,
-    profile_picture TEXT
+    profile_picture TEXT,
+    is_manager BOOLEAN DEFAULT false
 );
 
 CREATE TABLE posts (
@@ -28,8 +29,8 @@ CREATE TABLE comments (
 );
 
 CREATE TABLE schedule (
-    id SERIAL PRIMARY KEY,
-    user_id INT,
-    start_time INT,
-    end_time INT
+    shift_id SERIAL PRIMARY KEY,
+    users_id INT REFERENCES users(id),
+    week_day VARCHAR(10),
+    shift_time VARCHAR(30)
 );

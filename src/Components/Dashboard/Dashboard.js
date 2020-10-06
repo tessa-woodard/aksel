@@ -78,17 +78,17 @@ class Dashboard extends Component {
     }
 
     render() {
-        const mapPosts = this.state.posts.map((post, index) => {
+        const mapPosts = this.state.posts.map((post) => {
 
             return (
 
-                <li className="post-container" key={post.id}>
+                <div className="post-container" key={post.id}>
 
                     <div>
-                        <p className="post-text">{this.state.content}</p>
+                        <p>{this.state.content}</p>
                     </div>
 
-                    <div className='content_box dash_post_box'>
+                    <div>
                         <div className='author_box'>
                             <p>by {post.first_name} </p>
                             <img alt='author' />
@@ -106,7 +106,7 @@ class Dashboard extends Component {
                         handleCommentDelete={this.handleCommentDelete}
                     />
 
-                </li>
+                </div>
 
             )
 

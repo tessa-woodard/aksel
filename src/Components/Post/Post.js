@@ -69,7 +69,6 @@ class Post extends React.Component {
 
                 />
 
-
             )
 
         })
@@ -153,7 +152,7 @@ class Post extends React.Component {
                     <section className="comment-box">{mapComments}</section>
                 </div>
 
-                <div className="input-container">
+                <div className="input-comment-container">
                     <textarea
                         id="new-comment"
                         cols="60"
@@ -180,10 +179,7 @@ class Post extends React.Component {
 
             </>
 
-
-
         )
-
 
     }
 

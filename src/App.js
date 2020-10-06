@@ -8,7 +8,7 @@ import './scss/Styles.scss'
 function App(props) {
   return (
     <div className='App'>
-      {props.location.pathname !== '/' & '/register' ? <Nav /> : null}
+      {props.location.pathname !== '/' ? <Nav /> : null}
       {routes}
     </div>
   )

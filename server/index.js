@@ -10,6 +10,8 @@ const authCtrl = require('./authController')
 const postCtrl = require('./postController')
 const commentCtrl = require('./commentController')
 
+const scheduleCtrl = require('./scheduleController')
+
 const verifyUser = require('./middlewares/verifyUser')
 
 const app = express()
@@ -40,6 +42,11 @@ app.get('/comments', verifyUser, commentCtrl.getComments)
 app.post('/comments', verifyUser, commentCtrl.addComment)
 app.put('/comments/:comment_id', verifyUser, commentCtrl.editComment)
 app.delete('/comments/:comment_id', verifyUser, commentCtrl.deleteComment)
+
+app.get('/schedule', verifyUser, scheduleCtrl.getShifts)
+app.post('/schedule/:shift_id', verifyUser, scheduleCtrl.addShift)
+app.put('/schedule/:employee_id', verifyUser, scheduleCtrl.editShift)
+app.delete('/schedule/:shift_id', verifyUser, scheduleCtrl.deleteShift)
 
 massive({
     connectionString:

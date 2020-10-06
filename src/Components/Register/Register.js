@@ -12,7 +12,8 @@ class Register extends Component {
             last_name: '',
             email: '',
             password: '',
-            profile_picture: ''
+            profile_picture: '',
+            position: '',
         }
         this.handleRegister = this.handleRegister.bind(this)
     }
@@ -34,6 +35,12 @@ class Register extends Component {
             .catch((err) => {
                 alert(err.message)
             })
+    }
+
+    handleUserChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
     }
 
     render() {
@@ -86,13 +93,25 @@ class Register extends Component {
                         />
                     </div>
 
+                    <div className="row">
+                        <div className="col s12">
+                            <div className="input-field col m6 s6">
+                                <select className="browser-default validate" name="position" value={this.state.position} onChange={this.handleUserChange} required>
+                                    <option value="" disabled>Position</option>
+                                    <option value="manager">Manager</option>
+                                    <option value="employee">Employee</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
                     <div className='register_button_container'>
                         <button className='dark_button' onClick={() => { this.handleRegister() }}> Submit </button>
 
                         <span> Already have an account? </span>
 
                         <button
-                            className='dark_button' onClick={() => { this.props.history.push('/') }}> Login </button>
+                            className='dark_button' onClick={() => { this.props.history.push('/login') }}> Login </button>
                     </div>
                 </div>
             </div >
