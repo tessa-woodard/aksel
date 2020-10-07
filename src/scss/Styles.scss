@@ -277,3 +277,39 @@
   .post-comment-text {
     background-color: purple;
   }
+
+  .row {
+    height: 100vh;
+    width: 80vw;
+    padding: 50px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bordered {
+    flex-direction: column;
+    justify-content: space-around;
+    display: inline-flexbox;
+    // margin-left: 100px;
+    align-items: center;
+    padding: 15px;
+    width: 50vw;
+    height: 40vw;
+  }
+
+  .schedule{
+    background-color: #45A29E;
+    color: #1F2833;
+    padding: 10px;
+  }
+
+  .emp-h2 {
+    float: right;
+    font-size: 35px;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 26.4px;
+    margin-right: 25px;
+  }
+
+  

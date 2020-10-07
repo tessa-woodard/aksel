@@ -3,7 +3,6 @@ import axios from 'axios'
 import { connect } from 'react-redux'
 import { getUser } from '../../ducks/authReducer'
 
-import Schedule from './Schedule'
 import EditScheduleRow from './editScheduleRow'
 
 class managerScheduleCreator extends Component {
@@ -32,26 +31,6 @@ class managerScheduleCreator extends Component {
         }
         this.getSchedule()
     }
-
-    handleUserChange = (e, week_day, user_id) => {
-
-    }
-
-    // handleUserChange(e) {
-    //     const target = e.target
-    //     const value = target.value
-    //     const shift = shift.target.name
-
-    //     this.setState({
-    //         [shift]: value
-    //     })
-    // }
-
-    // handleUserChange = (e) => {
-    //     this.setState({
-    //         empSchedules: e.target.value
-    //     })
-    // }
 
     getSchedule = () => {
         axios.get('/schedule').then((res) => {

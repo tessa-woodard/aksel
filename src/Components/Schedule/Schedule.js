@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import axios from 'axios'
 import { getUser } from '../../ducks/authReducer'
 import { connect } from 'react-redux'
@@ -9,8 +9,8 @@ class Schedule extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            empSchedule: '',
-            shifts: ''
+            empSchedule: [],
+            shifts: []
         }
     }
 
@@ -35,6 +35,9 @@ class Schedule extends React.Component {
 
         return (
             <Shift
+                getSchedule={this.getSchedule}
+                empSchedules={this.state.shifts}
+
             />
         )
     }

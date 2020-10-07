@@ -1,6 +1,4 @@
 import React from 'react'
-import axios from 'axios'
-import { connect } from 'react-redux'
 
 class Shift extends React.Component {
     constructor(props) {
@@ -9,14 +7,6 @@ class Shift extends React.Component {
             empSchedules: [],
         }
     }
-
-    // componentDidMount() {
-    //     getShifts().then((res) => {
-    //         if (res !== this.state.empSchedules) {
-    //             this.setState({ empSchedules: res.data })
-    //         }
-    //     })
-    // }
 
     render() {
         return (
@@ -39,32 +29,32 @@ class Shift extends React.Component {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {this.state.empSchedules.map((schedules, i) => {
+                                    {this.props.empSchedules.map((employee) => {
                                         return (
-                                            <tr key={i}>
+                                            <tr>
                                                 <td className="fullName">
-                                                    {this.props.user.first_name} {this.props.user.last_name}
+                                                    {employee.first_name} {employee.last_name}
                                                 </td>
                                                 <td className="schedule">
-                                                    {schedules.monday}
+                                                    {employee.schedule.Monday}
                                                 </td>
                                                 <td>
-                                                    {schedules.tuesday}
+                                                    {employee.schedule.Tuesday}
                                                 </td>
                                                 <td>
-                                                    {schedules.wednesday}
+                                                    {employee.schedule.Wednesday}
                                                 </td>
                                                 <td>
-                                                    {schedules.thursday}
+                                                    {employee.schedule.Thursday}
                                                 </td>
                                                 <td>
-                                                    {schedules.friday}
+                                                    {employee.schedule.Friday}
                                                 </td>
                                                 <td>
-                                                    {schedules.saturday}
+                                                    {employee.schedule.Saturday}
                                                 </td>
                                                 <td>
-                                                    {schedules.sunday}
+                                                    {employee.schedule.Sunday}
                                                 </td>
                                             </tr>
                                         )

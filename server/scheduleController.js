@@ -44,7 +44,6 @@ module.exports = {
     },
 
     editShift: async (req, res) => {
-        console.log(req.body)
         const db = req.app.get('db')
 
         const { employee_id } = req.params
