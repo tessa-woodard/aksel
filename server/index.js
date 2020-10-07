@@ -46,9 +46,6 @@ app.use(session({
 }))
 
 app.use(express.static(__dirname + '/../build'))
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../build/index.html'))
-})
 
 app.post("/register", authCtrl.register)
 app.post("/login", authCtrl.login)
@@ -79,3 +76,7 @@ massive({
     app.set('db', dbInstance)
     console.log('DB working')
 }).catch(err => console.log(err))
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build/index.html'))
+})
