@@ -9,6 +9,8 @@ import Dashboard from './Components/Dashboard/Dashboard'
 import Schedule from './Components/Schedule/Schedule'
 import managerScheduleCreator from './Components/Schedule/managerScheduleCreator'
 
+import Chat from './Components/Chat/Chat'
+
 
 export default (
     <Switch>
@@ -19,6 +21,8 @@ export default (
 
         <Route path='/schedule' exact component={Schedule} />
         <Route path='/schedule/editor' component={managerScheduleCreator} />
+
+        <Route path='/chat' component={Chat} />
 
     </Switch>
 )

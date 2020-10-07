@@ -144,7 +144,7 @@ class Post extends React.Component {
                 <div className='content_box dash_comment_box'>
                     <div className='author_comment_box'>
                         <p>by {this.props.user.first_name} </p>
-                        <img alt='author' />
+                        <img src={'https://robohash.org/' + this.props.user.first_name} alt='author' />
                     </div>
                 </div>
 

@@ -84,14 +84,14 @@ class Dashboard extends Component {
 
                 <div className="post-container" key={post.id}>
 
-                    <div>
+                    <div className="content">
                         <p>{this.state.content}</p>
                     </div>
 
-                    <div>
+                    <div className="author_content_box">
                         <div className='author_box'>
                             <p>by {post.first_name} </p>
-                            <img alt='author' />
+                            <img src={'https://robohash.org/' + post.first_name} alt='author' />
                         </div>
                     </div>
 

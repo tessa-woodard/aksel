@@ -198,14 +198,23 @@
 }
 
 .nav_profile_pic {
-  margin-top: 60px;
-  height: 70px;
   width: 70px;
-  border-radius: 50%;
+  height: 70px;
   background-color: white;
   background-position: center;
   background-size: cover;
+  border-radius: 50%;
   box-shadow: 0 0 20px #333;
+  margin-bottom: 0px;
+}
+
+.nav_user {
+  margin-bottom: 80px;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 .nav_links {
@@ -219,11 +228,18 @@
 
 .schedule_img {
   position: absolute;
-  bottom: 300px;
+  bottom: 400px;
   right: 30px;
 }
 
 .nav_img {
+  width: 60px;
+}
+
+.home_img {
+  position: absolute;
+  bottom: 550px;
+  right: 30px;
   width: 60px;
 }
 
@@ -233,18 +249,21 @@
   left: 30px;
 }
 
-  .post-container {
-    display: inline-flexbox;
-    margin-top: 80px;
-    background-color: green;
+.author_box > img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 5px;
+}
 
-  }
+.author_comment_box > img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 5px;
+}
 
-  .author_box {
-    background-color: limegreen;
-  }
-
-  .input-container {
+.input-container {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
@@ -255,11 +274,54 @@
     width: 50vw;
     height: 10vh;
     border-radius: 10px;
-    background-color: red;
+    background-color: #45A29E;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-    
+}
+
+  .author_box > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 5px;
   }
+
+  .author_box {
+    align-items: flex-end;
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .post_container {
+    border-radius: 2px;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+    justify-content: space-around;
+    display: inline-flexbox;
+    align-items: center;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .author_comment_box {
+    background-color: #45A29E;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    width: 50vw;
+    height: 10vh;
+    border-radius: 10px;
+    align-items: flex-end;
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
   textarea {
     outline: none;
     resize: none;
@@ -267,15 +329,44 @@
     width: 700px;
     height: 40px;
     justify-content: center;
-	
   }
 
-  .content_box {
+  .content {
+    margin: 10px 0 0;
+  }
+
+  .comment-box {
     background-color: blue;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    display: inline-flexbox;
+    align-items: center;
+    padding: 15px;
+    width: 50vw;
+    height: 10vh;
+    border-radius: 10px;
+    align-items: flex-end;
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
   }
 
   .post-comment-text {
     background-color: purple;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    display: inline-flexbox;
+    align-items: center;
+    padding: 15px;
+    width: 50vw;
+    height: 10vh;
+    border-radius: 10px;
+    align-items: flex-end;
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
   }
 
   .row {
@@ -290,7 +381,6 @@
     flex-direction: column;
     justify-content: space-around;
     display: inline-flexbox;
-    // margin-left: 100px;
     align-items: center;
     padding: 15px;
     width: 50vw;
@@ -310,6 +400,45 @@
     font-weight: 500;
     line-height: 26.4px;
     margin-right: 25px;
+  }
+
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 30px;
+    min-height: 30rem;
+  }
+  form {
+    max-width: 350px;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 0.75);
+  }
+  
+  .name-field {
+    margin-bottom: 40px;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px;
+    background: transparent;
+    border-radius: 5px;
+  }
+  
+  .render-chat {
+    max-width: 350px;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 0.75);
+  }
+  
+  h3 {
+    color: #2f72da;
+  }
+  
+  span {
+    color: black;
   }
 
   

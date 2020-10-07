@@ -1,5 +1,9 @@
 require("dotenv").config()
 
+const socket = require('socket.io')
+
+const path = require('path')
+
 const express = require('express')
 const massive = require('massive')
 const session = require('express-session')
@@ -14,7 +18,21 @@ const scheduleCtrl = require('./scheduleController')
 
 const verifyUser = require('./middlewares/verifyUser')
 
-const app = express()
+const app = require('express')()
+
+const server = app.listen(SERVER_PORT, () =>
+    console.log(`Listening on port ${SERVER_PORT}`)
+)
+
+const io = socket(server)
+
+io.on('connection', socket => {
+    console.log('connected')
+    socket.on('message', ({ name, message }) => {
+        io.emit('message', { name, message })
+    })
+})
+
 
 app.use(express.json())
 
@@ -26,6 +44,11 @@ app.use(session({
         maxAge: 1000 * 60 * 60 * 24 * 365
     }
 }))
+
+app.use(express.static(__dirname + '/../build'))
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '../build/index.html'))
+})
 
 app.post("/register", authCtrl.register)
 app.post("/login", authCtrl.login)
@@ -55,6 +78,4 @@ massive({
 }).then(dbInstance => {
     app.set('db', dbInstance)
     console.log('DB working')
-    app.listen(SERVER_PORT, () =>
-        console.log(`Server listening on port ${SERVER_PORT}`))
 }).catch(err => console.log(err))
