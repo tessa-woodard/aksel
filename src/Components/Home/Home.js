@@ -18,16 +18,24 @@ class Home extends Component {
                         cursorChar={"|"}
                     />
 
-                    <div className="button">
+                </div>
+
+                <div className="container_holder">
+                    <div className="get_started">Get Started</div>
+
+                    <div className="button_container">
                         <Link to="/login">
-                            <button className="dark_button">
-                                Continue
-                            </button>
+                            <a class="button2">Login</a>
+                        </Link>
+
+                        <Link to="/register">
+                            <a class="button2">Register</a>
                         </Link>
                     </div>
-
                 </div>
-            </div>
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
+            </div >
 
         )
     }

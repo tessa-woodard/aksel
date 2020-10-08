@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
+import Typed from 'react-typed'
 
 import { loginUser } from '../../ducks/authReducer'
 
@@ -37,9 +38,7 @@ class Login extends Component {
             <div className='Login'>
                 <div className='login_container'>
 
-                    <h1 className='login_title'>Aksel</h1>
-
-                    <div className="login_input_box">
+                    <div className="login_input_container">
                         <p>Email:</p>
                         <input
                             maxLength="100"
@@ -59,16 +58,37 @@ class Login extends Component {
                                 this.handleInput(e)
                             }}
                         />
+
                     </div>
 
-                    <div className='login_button_container'>
-                        <button className='dark_button' onClick={() => { this.handleLogin() }}> Login </button>
+                    <a className='button2' onClick={() => { this.handleLogin() }}> Login </a>
 
-                        <span> Don't have an account? </span>
-
-                        <button className='dark_button' onClick={() => { this.props.history.push('/register') }} > Sign Up! </button>
-                    </div>
                 </div>
+
+                <div className="login_info_container">
+
+                    <div className="aksel_container">
+                        <Typed
+                            strings={['Aksel']}
+                            typeSpeed={120}
+                            backSpeed={120}
+                            loop={true}
+                            cursorChar={"|"}
+                        />
+
+                    </div>
+
+
+                    <div className='register_button_container'>
+
+                        <span> Don't have <br /> an account? </span>
+
+                        <a className='button2' onClick={() => { this.props.history.push('/register') }} > Sign Up! </a>
+
+                    </div>
+
+                </div>
+
             </div >
         );
     }

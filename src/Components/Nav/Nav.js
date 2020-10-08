@@ -9,9 +9,11 @@ import homeLogo from './home_logo.png'
 import { logoutUser } from '../../ducks/authReducer'
 
 function Nav(props) {
-    if (props.location.pathname !== '/login') {
+    if (props.location.pathname !== '/login' & '/register') {
         return (
+
             <div className='Nav'>
+
                 <div className='nav_profile_container'>
                     <div className='nav_profile_pic' style={{ backgroundImage: `url('https://robohash.org/${props.user.first_name}')` }}></div>
                     <p className='nav_user'>{props.user.first_name}</p>

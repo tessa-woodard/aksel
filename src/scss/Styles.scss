@@ -1,175 +1,294 @@
+body {
+  background-color: #f8f9d2;
+  background-image: linear-gradient(315deg, #f8f9d2 0%, #e8dbfc 74%);
+	background-size: cover;
+  animation: gradient 15s ease infinite;
+  min-width: 90vw;
+  min-height: 90vh;
+  font-family: 'Open Sans', 'Courier New', Courier, monospace;
+  align-items: center;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 .Home {
-  width: 100vw;
-  height: 100vh;
-  background-image: linear-gradient(351deg, #1F2833, #45A29E 40%, #1F2833 70%, #45A29E);
-  background-image: linear-gradient(351deg, #1F2833, #45A29E 40%, #1F2833 70%, #45A29E);
-  background-image: linear-gradient(99deg, #1F2833, #45A29E 40%, #1F2833 70%, #45A29E);
-  position: absolute;
+  background-color: #f8f9d2;
+  background-image: linear-gradient(315deg, #f8f9d2 0%, #e8dbfc 74%);
+	background-size: 100% 100%;
+  animation: gradient 15s ease infinite;
+  min-width: 100vw;
+  min-height: 100vh;
+  font-family: 'Open Sans', 'Courier New', Courier, monospace;
   top: 0;
   left: 0;
-  display: flexbox;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
   font-size: 75px;
   text-align: center;
+  overflow: hidden;
 }
 
 .title_container {
+  text-transform: uppercase;
+  font-family:'Open Sans', 'Courier New', Courier, monospace;
   border-radius: 8px;
+  background-color: #f8f9d2;
+  background-image: linear-gradient(315deg, #f8f9d2 0%, #e8dbfc 74%);
   box-shadow: 0 14px 28px 0 rgba(0, 0, 0, 0.25), 0 10px 10px 0 rgba(0, 0, 0, 0.26);
-  background-image: linear-gradient(353deg, #1F2833, #45A29E);
-  background-image: linear-gradient(97deg, #1F2833, #45A29E);
   width: 50vw;
   height: 50vh;
-  display: flexbox;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  padding: 30px;
+  position: relative;
+  margin:20px 20px 20px 20px;
+  border: 0.09em solid black;
+}
+
+.button_container {
+  border-radius: 8px;
+  background-color: #f8f9d2;
+  background-image: linear-gradient(315deg, #f8f9d2 0%, #e8dbfc 74%);
+  box-shadow: 0 14px 28px 0 rgba(0, 0, 0, 0.25), 0 10px 10px 0 rgba(0, 0, 0, 0.26);
+  width: 25vw;
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: -120px;
+  margin-right: -100px;
+  position: relative;
   padding: 20px;
-
+  border: 0.09em solid black;
+  margin:20px 20px 20px 20px;
 }
 
-.button {
-  padding: 100px;
-  position: absolute;
-  bottom: 90px;
-  right: 270px;
+.get_started {
+  text-transform:uppercase;
+  font-family:'Roboto',sans-serif;
+  border-radius: 8px;
+  background-color: #f8f9d2;
+  background-image: linear-gradient(315deg, #f8f9d2 0%, #e8dbfc 74%);
+  box-shadow: 0 14px 28px 0 rgba(0, 0, 0, 0.25), 0 10px 10px 0 rgba(0, 0, 0, 0.26);
+  width: 25vw;
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: -120px;
+  margin-right: -100px;
+  position: relative;
+  padding: 20px;
+  border: 0.09em solid black;
+  margin:20px 20px 20px 20px;
 }
 
+a.button2{
+display: flex;
+padding:0.5em 3em;
+border:0.16em solid black;
+margin:0 0.3em 0.3em 0;
+box-sizing: border-box;
+text-decoration:none;
+text-transform:uppercase;
+font-family:'Roboto',sans-serif;
+font-weight: 400;
+color:black;
+text-align:center;
+transition: all 0.15s;
+font-size: 25px
+  }
+  a.button2:hover{
+  color:#DDDDDD;
+  border-color:#DDDDDD;
+  }
+  a.button2:active{
+  color:#BBBBBB;
+  border-color:#BBBBBB;
+  }
+  @media all and (max-width:30em){
+   a.button2{
+  display:block;
+  margin:0.4em auto;
+  }
+  }
 
 .Login {
-    width: 100vw;
-    height: 100vh;
-    background-image: linear-gradient(351deg, #1F2833, #45A29E 40%, #1F2833 70%, #45A29E);
-    background-image: linear-gradient(351deg, #1F2833, #45A29E 40%, #1F2833 70%, #45A29E);
-    background-image: linear-gradient(99deg, #1F2833, #45A29E 40%, #1F2833 70%, #45A29E);
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flexbox;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
+  background-color: #f8f9d2;
+  background-image: linear-gradient(315deg, #f8f9d2 0%, #e8dbfc 74%);
+  background-size: 100% 100%;
+  font-family:'Roboto',sans-serif;
+  animation: gradient 15s ease infinite;
+  min-width: 100vw;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 55px;
+  text-align: center;
   }
   
-  .login_container {
+.login_container {
+    text-transform: uppercase;
+    font-family:'Open Sans', 'Courier New', Courier, monospace;
     border-radius: 8px;
+    background-color: #f8f9d2;
+    background-image: linear-gradient(315deg, #f8f9d2 0%, #e8dbfc 74%);
     box-shadow: 0 14px 28px 0 rgba(0, 0, 0, 0.25), 0 10px 10px 0 rgba(0, 0, 0, 0.26);
-    background-image: linear-gradient(353deg, #1F2833, #45A29E);
-    background-image: linear-gradient(97deg, #1F2833, #45A29E);
-    width: 30vw;
+    width: 35vw;
     height: 50vh;
-    display: flexbox;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    padding: 20px;
-  }
+    padding: 30px;
+    margin: 20px 20px 20px 20px;
+    border: 0.15em solid black;
+    text-align: center;
+    font-size: 35px;
+}
 
-  .login_title {
-    font-size: 40px;
-    font-weight: 500;
-  }
-  
-  .login_input_box {
-    display: flexbox;
-    display: flex;
-    justify-content: space-between;
-    width: 65%;
-    flex-direction: column;
-  }
-  
-  .login_input_box > input:focus {
-    outline-color: #45A29E;
-    outline-width: 5px;
-  }
-  
-  .login_button_container {
-    display: flexbox;
-    display: flex;
-    justify-content: space-around;
-    width: 55%;
-    flex-direction: column;
-  }
+.login_input_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+  font-family:'Roboto',sans-serif;
+  padding: 30px;
+  padding: 0px 10px 50px 10px;
+}
 
-  .App {
-    padding: 20px 20px 20px 100px;
-    font-family: 'Open Sans', 'Courier New', Courier, monospace;
-    background-color: #f2f2f2;
-    min-width: 100%;
-    min-height: 100vh;
-  }
-  
-  .dark_button {
+.register_button_container {
+  border-radius: 8px;
+  background-color: #f8f9d2;
+  background-image: linear-gradient(315deg, #f8f9d2 0%, #e8dbfc 74%);
+  box-shadow: 0 14px 28px 0 rgba(0, 0, 0, 0.25), 0 10px 10px 0 rgba(0, 0, 0, 0.26);
+  height: 25vh;
+  max-width: 275px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  padding: 30px;
+  border: 0.09em solid black;
+  margin: 20px 20px 20px 20px;
+  font-size: 35px;
+}
+
+.aksel_container {
+  text-transform:uppercase;
+  border-radius: 8px;
+  background-color: #f8f9d2;
+  background-image: linear-gradient(315deg, #f8f9d2 0%, #e8dbfc 74%);
+  box-shadow: 0 14px 28px 0 rgba(0, 0, 0, 0.25), 0 10px 10px 0 rgba(0, 0, 0, 0.26);
+  width: 15vw;
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-family:'Open Sans', 'Courier New', Courier, monospace;
+  position: relative;
+  padding: 20px;
+  border: 0.09em solid black;
+  margin:20px 20px 20px 20px;
+}
+    
+.dark_button {
     border-radius: 1px;
     background-image: radial-gradient(circle at 50% -46%, #737373, #403d39);
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
     padding: 10px 20px;
     color: white;
     border: none;
-  }
+}
 
-  .Register {
-    width: 100vw;
-    height: 100vh;
-    background-image: linear-gradient(351deg, #1F2833, #45A29E 40%, #1F2833 70%, #45A29E);
-    background-image: linear-gradient(351deg, #1F2833, #45A29E 40%, #1F2833 70%, #45A29E);
-    background-image: linear-gradient(99deg, #1F2833, #45A29E 40%, #1F2833 70%, #45A29E);
-    position: absolute;
+.Register {
+    background-color: #f8f9d2;
+    background-image: linear-gradient(315deg, #f8f9d2 0%, #e8dbfc 74%);
+    background-size: 100% 100%;
+    font-family:'Roboto',sans-serif;
+    animation: gradient 15s ease infinite;
+    min-width: 100vw;
+    min-height: 100vh;
     top: 0;
     left: 0;
-    display: flexbox;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-  }
+    font-size: 55px;
+    text-align: center;
+}
   
-  .register_container {
+.register_container {
+    text-transform: uppercase;
+    font-family:'Open Sans', 'Courier New', Courier, monospace;
     border-radius: 8px;
+    background-color: #f8f9d2;
+    background-image: linear-gradient(315deg, #f8f9d2 0%, #e8dbfc 74%);
     box-shadow: 0 14px 28px 0 rgba(0, 0, 0, 0.25), 0 10px 10px 0 rgba(0, 0, 0, 0.26);
-    background-image: linear-gradient(353deg, #1F2833, #45A29E);
-    background-image: linear-gradient(97deg, #1F2833, #45A29E);
-    width: 30vw;
+    width: 35vw;
     height: 50vh;
-    display: flexbox;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    padding: 20px;
-  }
+    padding: 30px;
+    margin: 20px 20px 20px 20px;
+    border: 0.35em solid black;
+    text-align: center;
+    font-size: 18px;
+}
 
-  .register_title {
-    font-size: 40px;
-    font-weight: 500;
-  }
-  
-  .register_input_box {
-    display: flexbox;
-    display: flex;
-    justify-content: space-between;
-    width: 65%;
-    flex-direction: column;
-  }
-  
-  .register_input_box > input:focus {
-    outline-color: #45A29E;
-    outline-width: 5px;
-  }
-  
-  .register_button_container {
-    display: flexbox;
-    display: flex;
-    justify-content: space-around;
-    width: 55%;
-    flex-direction: column;
-  }
+.register_input_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+  font-family:'Roboto',sans-serif;
+  align-items: center;
+  // margin-top: 550px;
+  // padding: 30px;
+  padding: 25px 10px 30px 10px;
+}
+
+.login_button_container {
+  border-radius: 8px;
+  background-color: #f8f9d2;
+  background-image: linear-gradient(315deg, #f8f9d2 0%, #e8dbfc 74%);
+  box-shadow: 0 14px 28px 0 rgba(0, 0, 0, 0.25), 0 10px 10px 0 rgba(0, 0, 0, 0.26);
+  height: 25vh;
+  max-width: 275px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  // position: relative;
+  padding: 30px;
+  border: 0.09em solid black;
+  margin: 20px 20px 20px 20px;
+  font-size: 35px;
+  // margin-left: 950px;
+  // margin-bottom: 400px;
+}
 
 .Nav {
   width: 120px;

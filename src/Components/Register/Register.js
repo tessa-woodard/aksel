@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
+import Typed from 'react-typed'
 
 import { loginUser } from '../../ducks/authReducer'
 
@@ -48,9 +49,7 @@ class Register extends Component {
             <div className='Register'>
                 <div className='register_container'>
 
-                    <h1 className='register_title'>Aksel</h1>
-
-                    <div className="register_input_box">
+                    <div className="register_input_container">
 
                         <p>First Name:</p>
                         <input
@@ -91,30 +90,49 @@ class Register extends Component {
                                 this.handleInput(e)
                             }}
                         />
-                    </div>
 
-                    <div className="row">
-                        <div className="col s12">
-                            <div className="input-field col m6 s6">
-                                <select className="browser-default validate" name="position" value={this.state.position} onChange={this.handleUserChange} required>
-                                    <option value="" disabled>Position</option>
-                                    <option value="manager">Manager</option>
-                                    <option value="employee">Employee</option>
-                                </select>
+                        <div className="position_input">
+                            <div className="col s12">
+                                <div className="input-field col m6 s6">
+                                    <select className="browser-default validate" name="position" value={this.state.position} onChange={this.handleUserChange} required>
+                                        <option value="" disabled>Position</option>
+                                        <option value="manager">Manager</option>
+                                        <option value="employee">Employee</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
+
+                        <a className='button2' onClick={() => { this.handleRegister() }}> Submit </a>
+
                     </div>
 
-                    <div className='register_button_container'>
-                        <button className='dark_button' onClick={() => { this.handleRegister() }}> Submit </button>
+                </div>
+
+                <div>
+
+                    <div className="aksel_container">
+                        <Typed
+                            strings={['Aksel']}
+                            typeSpeed={120}
+                            backSpeed={120}
+                            loop={true}
+                            cursorChar={"|"}
+                        />
+
+                    </div>
+
+                    <div className="login_button_container">
 
                         <span> Already have an account? </span>
 
-                        <button
-                            className='dark_button' onClick={() => { this.props.history.push('/login') }}> Login </button>
+                        <a className='button2' onClick={() => { this.props.history.push('/login') }}> Login </a>
+
                     </div>
+
                 </div>
-            </div >
+            </div>
+
         );
     }
 }
