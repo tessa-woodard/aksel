@@ -2,14 +2,10 @@ import React from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import logoutLogo from './shut_down.png'
-import scheduleLogo from './schedule_logo.png'
-import homeLogo from './home_logo.png'
-
 import { logoutUser } from '../../ducks/authReducer'
 
 function Nav(props) {
-    if (props.location.pathname !== '/login' & '/register') {
+    if (props.location.pathname !== '/') {
         return (
 
             <div className='Nav'>
@@ -20,15 +16,33 @@ function Nav(props) {
 
                 </div>
 
-                <div className='nav-links'>
-                    <Link to='/schedule'><img className='schedule_img' src={scheduleLogo} alt="schedule" />
+                <a className='button1'>
+                    <Link to='/schedule'>Schedule
                     </Link>
-                </div>
+                </a>
 
-                <Link to='/dashboard' onClick={props.dashboard}><img className='home_img' src={homeLogo} alt='home' /></Link>
+                {props.user.is_manager ? <a className='button1'>
+                    <Link to='/schedule/editor'>Manage Schedule
+                    </Link>
+                </a> : null}
 
-                <Link to='/' onClick={props.logout}><img className='nav_img logout' src={logoutLogo} alt='logout' />
-                </Link>
+
+                <a className='button1'>
+                    <Link to='/chat'>Chat
+                    </Link>
+                </a>
+
+
+                <a className='button1'>
+                    <Link to='/dashboard'>Home
+                    </Link>
+                </a>
+
+                <a className='button1'>
+                    <Link to='/'>Logout
+                    </Link>
+                </a>
+
 
             </div >
         )

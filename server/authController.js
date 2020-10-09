@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt')
 module.exports = {
     register: async (req, res) => {
         const db = req.app.get("db")
-        const { first_name, last_name, email, password } = req.body
+        const { first_name, last_name, email, password, position } = req.body
 
         const [user] = await db.check_user([email])
 
@@ -16,7 +16,9 @@ module.exports = {
 
         const profile_picture = `https://robohash.org/${first_name}`
 
-        const [newUser] = await db.register_user([first_name, last_name, email, hash, profile_picture])
+        const isManager = position === 'manager'
+
+        const [newUser] = await db.register_user([first_name, last_name, email, hash, profile_picture, isManager])
 
         req.session.user = newUser
 

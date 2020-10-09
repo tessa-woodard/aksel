@@ -26,9 +26,9 @@ class Register extends Component {
     }
 
     handleRegister = () => {
-        const { first_name, last_name, email, password } = this.state
+        const { first_name, last_name, email, password, position } = this.state
         axios
-            .post('/register', { first_name, last_name, email, password })
+            .post('/register', { first_name, last_name, email, password, position })
             .then((res) => {
                 this.props.loginUser(res.data)
                 this.props.history.push('/login')

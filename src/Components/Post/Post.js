@@ -66,7 +66,6 @@ class Post extends React.Component {
                     comment={comment}
                     handleCommentEdit={this.handleCommentEdit}
                     handleCommentDelete={this.handleCommentDelete}
-
                 />
 
             )
@@ -77,7 +76,7 @@ class Post extends React.Component {
 
             <>
 
-                <p className="post-comment-text"> {this.props.post.content} </p>
+                <p className="post_text"> {this.props.post.content} </p>
 
                 {this.props.user.id === this.props.post.author_id ? (<ul className="post-container" key={this.props.post.post_id}>
 
@@ -86,6 +85,7 @@ class Post extends React.Component {
 
                             <div>
                                 <input
+                                    className="input_post"
                                     value={this.state.userInput}
                                     onChange={(e) => {
                                         this.handleChange(e)
@@ -115,7 +115,7 @@ class Post extends React.Component {
 
                         :
 
-                        <div className="post-buttons">
+                        <div className="post_buttons">
                             {this.props.user.id === this.props.post.author_id && (
                                 <button
                                     className="dark_button"

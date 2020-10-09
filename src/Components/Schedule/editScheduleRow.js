@@ -35,11 +35,11 @@ class EditScheduleRow extends React.Component {
     render() {
         const { employee } = this.props
         return (
-            <tr className="table-row" key={employee.id}>
+            <tr className="table_row" key={employee.id}>
                 <td className="fullName" id={employee.id}>
                     {employee.first_name} {employee.last_name}
                 </td>
-                <td className="">
+                <td>
                     <div className="input-field schedule">
                         <select className="browser-default schedule" name="Monday" value={this.state.Monday} onChange={e => this.handleUserChange(e)}>
                             <option value=""></option>
@@ -152,7 +152,7 @@ class EditScheduleRow extends React.Component {
                     </div>
                 </td>
                 <td>
-                    <button onClick={this.handleScheduleSave} className="dark_button">Add</button>
+                    <a onClick={this.handleScheduleSave} className="button4">Add</a>
                     {/* <button id={i} onClick={this.handleClearEmpSchedule.bind(this, i)} className="dark_button">Clear</button> */}
                 </td>
             </tr>

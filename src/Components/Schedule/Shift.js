@@ -13,8 +13,8 @@ class Shift extends React.Component {
             <div>
                 <div className="row">
                     <div className="col s12">
-                        <div className="section schedule">
-                            <h5>Weekly Schedule</h5>
+                        <div className="section_schedule">
+                            <h5 className='schedule_title'>Weekly Schedule</h5>
                             <table className="bordered">
                                 <thead>
                                     <tr>
