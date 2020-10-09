@@ -2,6 +2,7 @@ import React from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
+
 import { logoutUser } from '../../ducks/authReducer'
 
 function Nav(props) {
@@ -17,7 +18,7 @@ function Nav(props) {
                 </div>
 
                 <a className='button1'>
-                    <Link to='/schedule'>Schedule
+                    <Link to='/schedule'> Schedule
                     </Link>
                 </a>
 

@@ -79,7 +79,7 @@ class managerScheduleCreator extends Component {
 
     render() {
         return (
-            <div className="col m12" id="schedule-build">
+            <div className="manager_schedule" id="schedule-build">
                 <div className="section">
                     <h5 className="schedule_title" id="sch-editor">Schedule Editor</h5>
                     <table>

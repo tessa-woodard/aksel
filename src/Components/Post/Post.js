@@ -78,7 +78,7 @@ class Post extends React.Component {
 
                 <p className="post_text"> {this.props.post.content} </p>
 
-                {this.props.user.id === this.props.post.author_id ? (<ul className="post-container" key={this.props.post.post_id}>
+                {this.props.user.id === this.props.post.author_id ? (<ul className="post_container" key={this.props.post.post_id}>
 
                     {this.state.isEditing === true ?
                         <div>
@@ -93,23 +93,23 @@ class Post extends React.Component {
                                 ></input>
                             </div>
 
-                            <div className="dark_button">
-                                <button
-                                    className="input-container-button-small"
+                            <div className="post_edit">
+                                <a
+                                    className="post_edit"
                                     onClick={() => {
                                         this.handleCancel()
                                     }}
                                 >
                                     Cancel
-                                </button>
-                                <button
-                                    className="input-container-button-small"
+                                </a>
+                                <a
+                                    className="post_edit"
                                     onClick={() => {
                                         this.handleSave()
                                     }}
                                 >
                                     Save
-                                </button>
+                                </a>
                             </div>
                         </div>
 
@@ -117,39 +117,40 @@ class Post extends React.Component {
 
                         <div className="post_buttons">
                             {this.props.user.id === this.props.post.author_id && (
-                                <button
-                                    className="dark_button"
+                                <a
+                                    className="button5"
                                     onClick={() => {
                                         this.toggleEdit()
                                     }}
                                 >
                                     Edit
-                                </button>
+                                </a>
                             )}
 
                             {this.props.user.id === this.props.post.author_id && (
-                                <button
-                                    className="dark_button"
+                                <a
+                                    className="button5"
                                     onClick={() => {
                                         this.props.handleDelete(this.props.post.id)
                                     }}
                                 >
                                     Delete
-                                </button>
+                                </a>
                             )}
                         </div>}
 
                 </ul>) : null}
 
-                <div className='content_box dash_comment_box'>
-                    <div className='author_comment_box'>
-                        <p>by {this.props.user.first_name} </p>
-                        <img src={'https://robohash.org/' + this.props.user.first_name} alt='author' />
-                    </div>
+                <div className='author_comment_box'>
+
+                    <img src={'https://robohash.org/' + this.props.user.first_name} alt='author' />
+
+                    <p>by {this.props.user.first_name}</p>
+
                 </div>
 
                 <div>
-                    <section className="comment-box">{mapComments}</section>
+                    <section className="comment_box">{mapComments}</section>
                 </div>
 
                 <div className="input-comment-container">
@@ -163,16 +164,16 @@ class Post extends React.Component {
                             this.handleCommentChange(e)
                         }}
                     />
-                    <button
+                    <a
                         onClick={() => {
                             this.props.handleCommentClick(this.props.post.id, this.state.commentInput)
                         }}
-                        className="dark_button"
+                        className="button9"
                     >
                         Submit
-                    </button>
+                    </a>
                     <div>
-                        <section className="post-box">{}</section>
+                        <section className="post_box">{}</section>
                     </div>
 
                 </div >

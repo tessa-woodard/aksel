@@ -84,11 +84,14 @@ class Dashboard extends Component {
 
                 <div className="post-container" key={post.id}>
 
-                    <p>{this.state.content}</p>
+                    <p >{this.state.content}</p>
 
-                    <img className="post_profile_pic" src={'https://robohash.org/' + post.first_name} alt='author' />
+                    <div className='author'>
+                        <img className="post_profile_pic" src={'https://robohash.org/' + post.first_name} alt='author' />
 
-                    <p className="post_author">by {post.first_name} </p>
+                        <p className="post_author">by {post.first_name} </p>
+
+                    </div>
 
                     <Post
                         post={post}
@@ -120,6 +123,7 @@ class Dashboard extends Component {
                         this.handleChange(e)
                     }}
                 />
+
                 <a className='button3'
                     onClick={() => {
                         this.handleClick()
@@ -129,7 +133,7 @@ class Dashboard extends Component {
                 </a>
 
                 <div>
-                    <section className="post_box">{mapPosts}</section>
+                    <section className="all_post_box">{mapPosts}</section>
                 </div>
 
             </div>

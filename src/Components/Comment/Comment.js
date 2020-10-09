@@ -57,23 +57,23 @@ class Comment extends React.Component {
                                 ></input>
                             </div>
 
-                            <div className="dark_button">
-                                <button
-                                    className="input-container-button-small"
+                            <div className="comme t_edit">
+                                <a
+                                    className="comment_edit"
                                     onClick={() => {
                                         this.handleCommentCancel()
                                     }}
                                 >
                                     Cancel
-                    </button>
-                                <button
-                                    className="input-container-button-small"
+                    </a>
+                                <a
+                                    className="comment_edit"
                                     onClick={() => {
                                         this.handleCommentSave()
                                     }}
                                 >
                                     Save
-                    </button>
+                    </a>
                             </div>
                         </div>
 
@@ -81,25 +81,25 @@ class Comment extends React.Component {
 
                         <div className="post-buttons">
                             {this.props.user.id === this.props.post.author_id && (
-                                <button
-                                    className="dark_button"
+                                <a
+                                    className="comment_delete"
                                     onClick={() => {
                                         this.toggleCommentEdit()
                                     }}
                                 >
                                     Edit
-                                </button>
+                                </a>
                             )}
 
                             {this.props.user.id === this.props.post.author_id && (
-                                <button
-                                    className="dark_button"
+                                <a
+                                    className="comment_delete"
                                     onClick={() => {
                                         this.props.handleCommentDelete(this.props.comment.id)
                                     }}
                                 >
                                     Delete
-                                </button>
+                                </a>
                             )}
                         </div>}
 
