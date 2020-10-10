@@ -13,7 +13,7 @@
 
 ###### *Logging in as a manager gives you access of managing the employees schedule.*
 
-### --------------------------------------------------------------
+### <br />
 
 ##### Aksel was created as my personal project while completing an immersive remote bootcamp at Devmountain.
 
