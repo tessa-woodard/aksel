@@ -5,6 +5,8 @@ import { connect } from 'react-redux'
 
 import Post from '../Post/Post'
 
+import { getPosts } from '../../ducks/postReducer'
+
 class Dashboard extends Component {
     constructor(props) {
         super(props);
@@ -147,4 +149,4 @@ class Dashboard extends Component {
 
 const mapStateToProps = (reduxState) => reduxState
 
-export default connect(mapStateToProps, { getUser })(Dashboard)
+export default connect(mapStateToProps, { getUser, getPosts })(Dashboard)
