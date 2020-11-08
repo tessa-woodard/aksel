@@ -14,6 +14,7 @@
 * Redux
 * Postman
 * Heroku
+* Socket.io
 
 ### <br />
 
